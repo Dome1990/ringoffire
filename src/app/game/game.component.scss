@@ -5,4 +5,31 @@
     max-width: 100%;
     background-image: url(../../assets/img/wood.jpg);
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-stack{
+    position: relative;
+    width: 100px;
+    height: 140px;
+    img{
+        height: 140px;
+        position: absolute;
+    }
+}
+
+.top-card{
+    cursor: pointer;
+    transition: all ease-in-out 125ms;
+    &:hover{
+        transform: scale(1.1) translateY(-10px);
+    }
+}
+
+.pick-card{
+    transition: all ease-in-out 125ms;
+    // animation: name duration timing-function delay iteration-count direction fill-mode;
+    transform: scale(1.5) !important;
 }
