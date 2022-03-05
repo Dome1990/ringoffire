@@ -1,0 +1,30 @@
+.start-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    background-image: url(../../assets/img/astronaut.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    button{
+        cursor: pointer;
+        padding: 16px;
+        background-color: #b36b1e9d;
+        color: white;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        border-radius: 3px;
+        transition: all ease-in-out 255ms;
+        font-size: 1.5rem;
+    }
+}
+
+.start-screen{
+    button:hover{
+        background-color: #b36b1e;
+    }
+}
