@@ -1,4 +1,4 @@
-.game{
+.game {
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -10,26 +10,41 @@
     align-items: center;
 }
 
-.card-stack{
+.card-stack {
     position: relative;
     width: 100px;
     height: 140px;
-    img{
+    img {
         height: 140px;
         position: absolute;
     }
 }
 
-.top-card{
+.top-card {
     cursor: pointer;
     transition: all ease-in-out 125ms;
-    &:hover{
+    &:hover {
         transform: scale(1.1) translateY(-10px);
     }
 }
 
-.pick-card{
+.pick-card {
     transition: all ease-in-out 125ms;
-    // animation: name duration timing-function delay iteration-count direction fill-mode;
-    transform: scale(1.5) !important;
+    animation: pick-card-animation 1.5s ease;
+    transform: scale(1) translateX(120px) translateY(-150px) rotate(-10deg);
+}
+
+@keyframes pick-card-animation {
+    0% {
+        transform: scale(1.1);
+    }
+    30% {
+        transform: scale(1.7);
+    }
+    50% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1) translateX(120px) translateY(-150px) rotate(-10deg);
+    }
 }
