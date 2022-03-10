@@ -1,0 +1,16 @@
+.player{
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    background-color: orange;
+    overflow: hidden;
+    border-top-left-radius: 33px;
+    border-bottom-left-radius: 33px;
+    img{
+        height: 66px;
+    }
+    span{
+        font-size: 24px;
+        padding-left: 16px;
+    }
+}
