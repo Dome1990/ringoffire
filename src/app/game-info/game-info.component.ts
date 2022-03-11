@@ -19,7 +19,7 @@ export class GameInfoComponent implements OnInit, OnChanges {
     { title: 'Thumbmaster', description: '' },
     { title: 'Men', description: 'All men drink.' },
     { title: 'Quizmaster', description: '' },
-    { title: 'Never have i ever...', description: 'Say something you nnever did. Everyone who did it has to drink.' },
+    { title: 'Never have i ever...', description: 'Say something you never did. Everyone who did it has to drink.' },
     { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
   ];
 
@@ -34,9 +34,8 @@ export class GameInfoComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     if (this.card) {
       let cardNumber = +this.card.split('_')[1];
-      this.title = this.cardAction[cardNumber -1].title;
-      this.description = this.cardAction[cardNumber -1].description;
-      console.log(this.card);
+      this.title = this.cardAction[cardNumber - 1].title;
+      this.description = this.cardAction[cardNumber - 1].description;
     }
   }
 
