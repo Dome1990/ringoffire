@@ -2,15 +2,20 @@
     display: flex;
     align-items: center;
     min-width: 200px;
-    background-color: orange;
+    background-color: rgba(146, 140, 140, 0.897);
     overflow: hidden;
     border-top-left-radius: 33px;
     border-bottom-left-radius: 33px;
     img{
         height: 66px;
+        width: 66px;
     }
     span{
         font-size: 24px;
         padding-left: 16px;
     }
+}
+
+.player-active{
+    background-color: orange !important;
 }

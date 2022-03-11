@@ -10,6 +10,7 @@ export class PlayerComponent implements OnInit {
   constructor() {}
 
   @Input() name: any;
+  @Input() PlayerActive: boolean = false;
 
   ngOnInit(): void {
   }

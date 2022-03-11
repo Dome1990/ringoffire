@@ -13,6 +13,8 @@ export class GameComponent implements OnInit {
   game: Game;
   currentCard: string = '';
   name: any;
+
+
   constructor(public dialog: MatDialog) {
     this.game = new Game();
   }
@@ -28,6 +30,12 @@ export class GameComponent implements OnInit {
       setTimeout(() => {
         this.pickCardAnimation = false;
         this.game.playedCards.push(this.currentCard);
+        if (this.game.players.length-1 > this.game.currentPlayer) {
+          this.game.currentPlayer++;
+        }
+        else {
+          this.game.currentPlayer = 0;
+        }
       }, 1500);
     }
   }
