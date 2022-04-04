@@ -1,0 +1,27 @@
+.player {
+    display                   : flex;
+    flex-direction            : column;
+    width                     : 100px;
+    min-height                : 150px;
+    max-width                 : fit-content;
+    background-color          : rgba(146, 140, 140, 0.897);
+    overflow                  : hidden;
+    border-bottom-left-radius : 50px;
+    border-bottom-right-radius: 50px;
+    align-items               : center;
+    justify-content           : space-between;
+    margin-left               : 12px;
+
+    img {
+        height: 100px;
+        width : 100px;
+    }
+
+    span {
+        font-size: 1.5rem;
+    }
+}
+
+.player-active {
+    background-color: orange !important;
+}
