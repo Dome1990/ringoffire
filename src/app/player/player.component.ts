@@ -11,6 +11,7 @@ export class PlayerComponent implements OnInit {
 
   @Input() name: any;
   @Input() PlayerActive: boolean = false;
+  @Input() profilePic: any;
 
   ngOnInit(): void {
   }

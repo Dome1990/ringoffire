@@ -88,6 +88,13 @@
     right   : 100px;
 }
 
+app-player-mobile, app-player{
+    cursor: pointer;
+    &:hover{
+        filter: brightness(1.15);
+    }
+}
+
 @media (max-width: 760px) {
     .pin-bottom {
         bottom: 0;

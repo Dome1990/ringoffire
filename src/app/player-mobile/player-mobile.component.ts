@@ -9,6 +9,7 @@ export class PlayerMobileComponent implements OnInit {
 
   @Input() name: any;
   @Input() PlayerActive: boolean = false;
+  @Input() profilePic: any;
 
   constructor() { }
 

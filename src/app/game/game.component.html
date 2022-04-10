@@ -1,10 +1,10 @@
-<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': i*80 +80}"
-    [PlayerActive]="i == game.currentPlayer" class="playerPosition hide-desktop" [name]="player">
+<app-player (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': i*80 +20}"
+    [PlayerActive]="i == game.currentPlayer" class="playerPosition hide-desktop" [name]="player" [profilePic]='game.playerImage[i]'>
 </app-player>
 
 <div class="scrollContainer">
-    <app-player-mobile *ngFor="let player of game.players; let i = index" [PlayerActive]="i == game.currentPlayer"
-        class="hide-mobile" [name]="player">
+    <app-player-mobile (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index" [PlayerActive]="i == game.currentPlayer"
+        class="hide-mobile" [name]="player" [profilePic]='game.playerImage[i]'>
     </app-player-mobile>
 </div>
 
@@ -26,7 +26,7 @@
 
 <app-game-info [card]="game.currentCard" [players]="game.players" class="pin-bottom"></app-game-info>
 
-<button *ngIf="!game.gameStarted" mat-fab color="primary" class="add-btn" (click)="openDialog()">
+<button *ngIf="!game.gameStarted" [disabled]="maxPlayer" mat-fab color="primary" class="add-btn" (click)="openDialog()">
     <mat-icon>add</mat-icon>
 </button>
 

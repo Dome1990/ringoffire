@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Edit Player</h1>
+<img [mat-dialog-close]="picture" *ngFor="let picture of profilePics" src="./assets/img/playerImg/{{ picture }}" alt="">
+
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]>Cancel</button>
+    <button color="warn" mat-raised-button [mat-dialog-close]="'DELETE'" cdkFocusInitial>DELETE PLAYER</button>
+</div>

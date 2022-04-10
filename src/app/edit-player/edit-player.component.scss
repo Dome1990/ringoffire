@@ -1,0 +1,13 @@
+img {
+    height: 66px;
+    width: 66px;
+    border-radius: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.9;
+    }
+}
+h1{
+    text-align: center;
+}
