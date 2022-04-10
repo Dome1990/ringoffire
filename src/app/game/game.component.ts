@@ -13,7 +13,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GameComponent implements OnInit {
 
   game: Game;
-
   name: any;
   gameId: string = '';
 
@@ -26,8 +25,6 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     this.newGame();
     this.route.params.subscribe((params) => {
-      console.log(params['id']);
-
       this.gameId = params['id'];
 
       this
@@ -43,6 +40,7 @@ export class GameComponent implements OnInit {
           this.game.stack = game.stack;
           this.game.currentCard = game.currentCard;
           this.game.pickCardAnimation = game.pickCardAnimation;
+          this.game.gameStarted = game.gameStarted;
         });
 
 
@@ -51,9 +49,10 @@ export class GameComponent implements OnInit {
   }
 
   pickCard() {
-    if (!this.game.pickCardAnimation) {
+    if (!this.game.pickCardAnimation && this.game.players.length >= 1) {
       this.game.currentCard = this.game.stack.pop()!;
       this.game.pickCardAnimation = true;
+      this.game.gameStarted = true;
       this.saveGame();
       setTimeout(() => {
         this.game.pickCardAnimation = false;

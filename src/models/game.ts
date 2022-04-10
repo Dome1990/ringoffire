@@ -5,6 +5,7 @@ export class Game {
     public currentPlayer: number = 0;
     public currentCard: string = '';
     public pickCardAnimation = false;
+    public gameStarted = false;
 
     constructor() {
         for (let i = 1; i < 14; i++) {
@@ -24,6 +25,7 @@ export class Game {
             currentPlayer: this.currentPlayer,
             currentCard: this.currentCard,
             pickCardAnimation: this.pickCardAnimation,
+            gameStarted: this.gameStarted,
         };
     }
 

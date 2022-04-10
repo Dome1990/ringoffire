@@ -26,16 +26,26 @@ export class GameInfoComponent implements OnInit, OnChanges {
   title: string = '';
   description: string = '';
   @Input() card!: string;
+  @Input() players: any;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+   }
 
   ngOnChanges(): void {
-    if (this.card) {
+    if (this.card && this.players.length >= 1) {
       let cardNumber = +this.card.split('_')[1];
       this.title = this.cardAction[cardNumber - 1].title;
       this.description = this.cardAction[cardNumber - 1].description;
+    }
+    else if (this.players.length < 1){
+      this.title = 'Please a add player';
+      this.description = 'Use the plus button to add a player';
+    }
+    else if(! this.card && this.players.length >= 1){
+      this.title = 'Please pick a card or add another player';
+      this.description = 'Please click on the card stack to select a card! Or add another player with the plus button';
     }
   }
 
