@@ -95,6 +95,12 @@ app-player-mobile, app-player{
     }
 }
 
+.game-over{
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+}
+
 @media (max-width: 760px) {
     .pin-bottom {
         bottom: 0;

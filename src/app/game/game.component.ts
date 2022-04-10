@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
   name: any;
   gameId: string = '';
   maxPlayer = false;
+  gameOver = false;
 
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) {
@@ -42,6 +43,7 @@ export class GameComponent implements OnInit {
           this.game.currentCard = game.currentCard;
           this.game.pickCardAnimation = game.pickCardAnimation;
           this.game.gameStarted = game.gameStarted;
+          console.log(this.game.stack.length);
         });
     });
 
@@ -49,7 +51,10 @@ export class GameComponent implements OnInit {
   }
 
   pickCard() {
-    if (!this.game.pickCardAnimation && this.game.players.length >= 1) {
+    if (this.game.stack.length == 0){
+      this.gameOver = true;
+    }
+    else if (!this.game.pickCardAnimation && this.game.players.length >= 1) {
       this.game.currentCard = this.game.stack.pop()!;
       this.game.pickCardAnimation = true;
       this.game.gameStarted = true;

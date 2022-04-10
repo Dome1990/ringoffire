@@ -8,7 +8,9 @@
     </app-player-mobile>
 </div>
 
-<div class="game">
+<img class="game-over" *ngIf="gameOver" src="./assets/img/gameOver.png" >
+
+<div *ngIf="!gameOver" class="game">
     <div class="card-stack">
         <!-- card stack -->
         <img [ngStyle]="{'right.px': i * 5}" *ngFor="let c of [0, 1, 2, 3, 4]; let i = index;"
@@ -24,7 +26,7 @@
     </div>
 </div>
 
-<app-game-info [card]="game.currentCard" [players]="game.players" class="pin-bottom"></app-game-info>
+<app-game-info *ngIf="!gameOver" [card]="game.currentCard" [players]="game.players" class="pin-bottom"></app-game-info>
 
 <button *ngIf="!game.gameStarted" [disabled]="maxPlayer" mat-fab color="primary" class="add-btn" (click)="openDialog()">
     <mat-icon>add</mat-icon>
